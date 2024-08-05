@@ -1,27 +1,14 @@
 import { NgModule } from '@angular/core';
-import { ExtraOptions, PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
+import { SolutionComponent } from './@solution/solution.component';
 
 const routes: Routes = [
-  {
-    path: 'automation',
-    loadChildren: () => import('./@solution/solution.module').then(m => m.SolutionModule),
-  },
-  {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'automation'
-  }
+  { path: '', redirectTo: 'solution', pathMatch: 'full' },
+  { path: 'solution', component: SolutionComponent, loadChildren: () => import('./@solution/solution.module').then(m => m.SolutionModule) }
 ];
-const routerOptions: ExtraOptions = {
-  preloadingStrategy: PreloadAllModules,
-};
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes,routerOptions)],
-  exports: [RouterModule],
-  providers: [
-    
-  ],
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
 })
-export class AppRoutingModule {
-}
+export class AppRoutingModule { }

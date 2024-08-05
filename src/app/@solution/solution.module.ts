@@ -1,23 +1,15 @@
-import { NgModule } from "@angular/core";
-import { SolutionComponent } from './solution.component';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { SolutionRoutingModule } from './solution-routing.module';
-import { DataService } from "./services/common/data.service";
+import { SolutionComponent } from './solution.component';
+import { AutomationModule } from './component/automation/automation.module';
 
-const SOLUTION_COMPONENTS = [
-    SolutionComponent,
-];
 @NgModule({
-    imports: [
-        SolutionRoutingModule,
-    ],
-    declarations: [
-        SolutionComponent,
-    ],
-    providers: [
-        DataService
-    ],
-  
-    bootstrap: [SolutionComponent]
+  declarations: [SolutionComponent],
+  imports: [
+    CommonModule,
+    SolutionRoutingModule,
+    AutomationModule
+  ]
 })
-export class SolutionModule {
-}
+export class SolutionModule { }

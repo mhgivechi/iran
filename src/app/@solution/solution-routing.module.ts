@@ -1,38 +1,14 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
-import { UserComponent } from "./component/automation/users/user.component";
-import { SolutionComponent } from "./solution.component";
-// const routes: Routes = 
-// [
-//     {
-//         path: '', component: SolutionComponent,
-//         children: [
-//             {
-//                 path: 'settings',
-//                 loadChildren: () => import('./components/automation/automation.module').then(x => x.AutomationModule)
-//             }
-//         ]
-//     }
-// ]
-const routes: Routes = [
-    {
-      component:SolutionComponent,
-      path: 'user',
-      loadChildren: () => import('./component/automation/automation.module').then(m => m.AutomationModule),
-    },
-    {
-      path: '',
-      pathMatch: 'full',
-      redirectTo: 'user'
-    }
-  ];
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { AutamationComponent } from './component/automation/automation.component';
 
+const routes: Routes = [
+  { path: '', redirectTo: 'automation', pathMatch: 'full' },
+  { path: 'automation', component: AutamationComponent, loadChildren: () => import('./component/automation/automation.module').then(m => m.AutomationModule) }
+];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)],
+  exports: [RouterModule]
 })
-
-export class SolutionRoutingModule {
-
-}
+export class SolutionRoutingModule { }

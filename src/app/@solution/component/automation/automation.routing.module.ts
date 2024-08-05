@@ -1,16 +1,16 @@
-import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { AutamationComponent } from './automation.component';
-import { UserFormComponent } from './users/user-form/user-form.component';
-import { UserComponent } from './users/user.component';
+import { RouterModule, Routes } from '@angular/router';
+import { UserComponent } from '../automation/users/user.component';
+import { UserFormComponent } from '../automation/users/user-form/user-form.component';
 
 const routes: Routes = [
-  {path: '', component: UserComponent},
+  { path: '', redirectTo: '/automation/user', pathMatch: 'full' },
+  { path: 'automation/user', component: UserComponent },
+  { path: 'automation/user-form', component: UserFormComponent }
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule],
+  exports: [RouterModule]
 })
-export class AutomationRoutingModule {
-}
+export class AutomationRoutingModule { }

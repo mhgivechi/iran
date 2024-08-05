@@ -1,29 +1,22 @@
-import { NgModule } from "@angular/core";
-import { AppComponent } from "./app.component";
-import { APP_BASE_HREF, CommonModule } from "@angular/common";
-import { BrowserModule } from "@angular/platform-browser";
-import { AppRoutingModule } from "./app-routing.module";
-//import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
-import { BlockUIModule } from "ng-block-ui";
-import { DataService } from "./@solution/services/common/data.service";
-
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { SolutionModule } from './@solution/solution.module';
+import { BlockUIModule } from 'ng-block-ui';
+import { DataService } from './@solution/services/common/data.service'; // Import the service
 
 @NgModule({
-    declarations: [AppComponent],
-    imports: [
-        
-        CommonModule,
-        BrowserModule,
-        AppRoutingModule,
-        //NgbModule,
-        BlockUIModule.forRoot(),
-    ],
-    bootstrap: [AppComponent],
-    providers: [
-        { provide: APP_BASE_HREF, useValue: '/' },
-        DataService
-    ]
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    SolutionModule,
+    BlockUIModule.forRoot()
+  ],
+  providers: [DataService], // Add DataService here
+  bootstrap: [AppComponent]
 })
-export class AppModule {
-
-}
+export class AppModule { }
