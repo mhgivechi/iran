@@ -31,7 +31,7 @@ enum ErrorStatusCode {
 export class DataService {
   @BlockUI() blockUI: NgBlockUI;
   private headers = new HttpHeaders();
-  private baseUrl: string;
+  private baseUrl: string = '';
 
   constructor(private httpClient: HttpClient,
     private swalService: SwalService,

@@ -1,0 +1,44 @@
+.automation-layout {
+    display: flex;
+    height: 100vh;
+  }
+  
+  .sidebar {
+    width: 250px;
+    background-color: #343a40;
+    color: white;
+    padding-top: 20px;
+  }
+  
+  .sidebar .nav-link {
+    color: white;
+    margin-bottom: 10px;
+  }
+  
+  .sidebar .nav-link:hover {
+    color: #ffc107;
+  }
+  
+  .main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .header .btn {
+    margin-left: 10px;
+  }
+  
+  .content {
+    padding: 20px;
+    flex: 1;
+    overflow-y: auto;
+    background-color: #f8f9fa;
+  }

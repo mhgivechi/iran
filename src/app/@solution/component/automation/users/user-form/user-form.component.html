@@ -1,13 +1,12 @@
-<!-- <nb-card>
-    <nb-card-header>
-      کارتخوان
-      
-    </nb-card-header>
-    <nb-card-body>
-     
-    </nb-card-body>
-  </nb-card>
-   -->
-  <div>
-    ssssssssss
-  </div>
+<div class="modal-header">
+  <h4 class="modal-title">فرم کاربر</h4>
+<button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+<div class="modal-body">
+  <p>شناسه کاربر: {{ id }}</p>
+  <!-- فرم و محتواهای دیگر -->
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-secondary" (click)="activeModal.dismiss('cancel click')">بستن</button>
+  <button type="button" class="btn btn-primary" (click)="activeModal.close('Save click')">ذخیره</button>
+</div>

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { SolutionModule } from './@solution/solution.module';
 import { BlockUIModule } from 'ng-block-ui';
 import { DataService } from './@solution/services/common/data.service'; // Import the service
-
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent
@@ -14,9 +14,10 @@ import { DataService } from './@solution/services/common/data.service'; // Impor
     BrowserModule,
     AppRoutingModule,
     SolutionModule,
-    BlockUIModule.forRoot()
+    BlockUIModule.forRoot(),
+    
   ],
-  providers: [DataService], // Add DataService here
+  providers: [DataService,provideHttpClient(withInterceptorsFromDi())], // Add DataService here
   bootstrap: [AppComponent]
 })
 export class AppModule { }

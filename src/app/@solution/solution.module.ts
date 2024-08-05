@@ -4,6 +4,7 @@ import { SolutionRoutingModule } from './solution-routing.module';
 import { SolutionComponent } from './solution.component';
 import {RugCertificateModule  } from './component/rug-certificate/rug-certificate.module';
 import {AutomationModule  } from './component/automation/automation.module';
+import { AutomationLayoutComponent } from './layout/automation-layout/automation-layout.component';
 
 @NgModule({
   declarations: [SolutionComponent],
@@ -11,7 +12,7 @@ import {AutomationModule  } from './component/automation/automation.module';
     CommonModule,
     SolutionRoutingModule,
     AutomationModule,
-    RugCertificateModule
+    RugCertificateModule,
   ]
 })
 export class SolutionModule { }
